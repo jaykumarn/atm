@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Statement - ATM System{% endblock %}
+
+{% block content %}
+<h2 style="color: #00d4ff; text-align: center; margin-bottom: 20px; font-size: 18px;">Account Statement</h2>
+
+<div class="balance-display">
+    <div class="label">Account Holder</div>
+    <div style="color: #fff; font-size: 20px; margin-top: 5px; margin-bottom: 15px;">{{ username.capitalize() }}</div>
+    <div class="label">Available Balance</div>
+    <div class="amount">{{ balance }} <span class="currency">EUR</span></div>
+</div>
+
+<a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Back to Menu</a>
+{% endblock %}

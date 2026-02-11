@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - ATM System{% endblock %}
+
+{% block content %}
+<p class="welcome-text">Welcome, <strong>{{ username.capitalize() }}</strong></p>
+
+<div class="balance-display">
+    <div class="label">Current Balance</div>
+    <div class="amount">{{ balance }} <span class="currency">EUR</span></div>
+</div>
+
+<div class="menu-grid">
+    <a href="{{ url_for('statement') }}" class="menu-btn">
+        <span class="icon">📊</span>
+        <span class="label">Statement</span>
+    </a>
+    <a href="{{ url_for('withdraw') }}" class="menu-btn">
+        <span class="icon">💸</span>
+        <span class="label">Withdraw</span>
+    </a>
+    <a href="{{ url_for('deposit') }}" class="menu-btn">
+        <span class="icon">💰</span>
+        <span class="label">Deposit</span>
+    </a>
+    <a href="{{ url_for('change_pin') }}" class="menu-btn">
+        <span class="icon">🔐</span>
+        <span class="label">Change PIN</span>
+    </a>
+</div>
+
+<a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+{% endblock %}
